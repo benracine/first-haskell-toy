@@ -84,5 +84,5 @@ function reverseByCount(pair) {
 }
 
 function stringifyPair(pair) { 
-  return pair[0] + ' ' + pair[1]; 
+  return pair.join(' ');
 }
