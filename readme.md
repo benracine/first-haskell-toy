@@ -1,4 +1,4 @@
-In order to run:
+In order to (compile and) run:
 
 `$ ghc count-states.hs`
 
