@@ -1,15 +1,6 @@
 ## Functional purity
 
-This is just a little exploration into how easy or hard it is to separate
-JavaScript(/node) code into a collection of mostly pure little functions.
-
-Any and all comments welcome.
-
-## Quick start
-
-`$ npm install`
-
-`$ node count-states.js`
-
-## TODO
+In order to run:
+- `$ ghc count-states.hs`
+- `$ ./count-states(.exe)`
 
