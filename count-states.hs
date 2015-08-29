@@ -1,5 +1,5 @@
 import Data.List
-import Data.Text hiding (length, foldl, zip)
+import Data.Text (breakOnAll, pack)
 import States
 
 main :: IO ()
@@ -9,7 +9,7 @@ main = do
 
 --processString :: String -> String
 processString file_contents = 
-  foldl tallyOccurences "" states_and_abbrs
+  foldl tallyOccurences [] states_and_abbrs
   where 
     tallyOccurences memo pair =
       memo ++ "\n" ++ fst pair ++ ", " ++ snd pair ++ " " ++ countOccurences pair 
