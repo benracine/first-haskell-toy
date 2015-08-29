@@ -17,7 +17,7 @@ processString file_contents =
       let state_matches = subStrs file_contents (fst pair)
           abbr_matches = subStrs file_contents (snd pair) 
       in 
-      show (length state_matches + length abbr_matches)
+      show $ length state_matches + length abbr_matches
     states_and_abbrs = zip States.states States.abbrs
 
 --subStrs :: String -> String -> [(Text, Text)]
