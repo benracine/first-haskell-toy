@@ -5,10 +5,10 @@ import States
 main :: IO ()
 main = do
   file_string <- readFile "./homesteading-cities.txt"
-  putStrLn $ processString file_string
+  putStrLn $ countStatesInString file_string
 
-processString :: String -> String
-processString file_contents = 
+countStatesInString :: String -> String
+countStatesInString file_contents = 
   foldl tallyOccurences [] states_and_abbrs
   where 
     tallyOccurences memo pair =
