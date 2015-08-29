@@ -15,9 +15,7 @@ processString file_contents =
       memo ++ "\n" ++ fst pair ++ ", " ++ snd pair ++ " " ++ countOccurences pair 
     countOccurences pair = 
       show (length (subStrs file_contents (fst pair)) + length (subStrs file_contents (snd pair)))
-    states = States.states
-    abbrs = States.abbrs
-    states_and_abbrs = zip states abbrs
+    states_and_abbrs = zip States.states States.abbrs
 
 subStrs :: String -> String -> [(Text, Text)]
 subStrs str sub = 
