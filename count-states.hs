@@ -1,5 +1,5 @@
-import Data.List (foldl, length)
-import Data.Text (breakOnAll, pack)
+import Data.List (foldl, length, sortBy, last)
+import Data.Text hiding (foldl, length, zip, last)
 import States
 
 main :: IO ()
@@ -9,7 +9,7 @@ main = do
 
 countStatesInString :: String -> String
 countStatesInString file_contents = 
-  foldl tallyOccurences [] states_and_abbrs
+  foldl tallyOccurences "" states_and_abbrs
   where 
     tallyOccurences memo pair =
       memo ++ "\n" ++ fst pair ++ ", " ++ snd pair ++ " " ++ countOccurences pair 
@@ -23,3 +23,4 @@ countStatesInString file_contents =
 subStrs :: String -> String -> [(Text, Text)]
 subStrs str sub = 
   breakOnAll (pack sub) (pack str)
+
