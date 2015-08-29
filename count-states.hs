@@ -7,7 +7,7 @@ main = do
   file_string <- readFile "./homesteading-cities.txt"
   putStrLn $ processString file_string
 
---processString :: String -> String
+processString :: String -> String
 processString file_contents = 
   foldl tallyOccurences [] states_and_abbrs
   where 
@@ -20,6 +20,6 @@ processString file_contents =
       show $ length state_matches + length abbr_matches
     states_and_abbrs = zip States.states States.abbrs
 
---subStrs :: String -> String -> [(Text, Text)]
+subStrs :: String -> String -> [(Text, Text)]
 subStrs str sub = 
   breakOnAll (pack sub) (pack str)
