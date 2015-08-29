@@ -1,4 +1,4 @@
-import Data.List
+import Data.List (foldl, length)
 import Data.Text (breakOnAll, pack)
 import States
 
