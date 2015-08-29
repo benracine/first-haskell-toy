@@ -14,7 +14,10 @@ processString file_contents =
     tallyOccurences memo pair =
       memo ++ "\n" ++ fst pair ++ ", " ++ snd pair ++ " " ++ countOccurences pair 
     countOccurences pair = 
-      show (length (subStrs file_contents (fst pair)) + length (subStrs file_contents (snd pair)))
+      let state_matches = subStrs file_contents (fst pair)
+          abbr_matches = subStrs file_contents (snd pair) 
+      in 
+      show (length state_matches + length abbr_matches)
     states_and_abbrs = zip States.states States.abbrs
 
 --subStrs :: String -> String -> [(Text, Text)]
